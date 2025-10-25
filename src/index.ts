@@ -1,4 +1,5 @@
 import { Elysia } from "elysia";
+import { list } from "./modules/list";
 
 new Elysia({
     prefix: "/v1",
@@ -10,4 +11,5 @@ new Elysia({
     .listen(3002, ({ port }) => {
         port
     })
+    .use(list)
 
