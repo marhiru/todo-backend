@@ -1,7 +1,15 @@
 import { Elysia } from "elysia";
+import { list } from "./modules/list";
 
-const app = new Elysia().get("/", () => "Hello Elysia").listen(3000);
+new Elysia({
+    prefix: "/v1",
+    normalize: true
+})
+    .get("/version", () => {
+        return "1.0.0"
+    })
+    .listen(3002, ({ port }) => {
+        port
+    })
+    .use(list)
 
-console.log(
-  `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
-);
