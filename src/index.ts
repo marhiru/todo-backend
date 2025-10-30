@@ -1,5 +1,6 @@
 import { Elysia } from "elysia";
 import { list } from "./modules/list";
+import { util } from "./modules/util";
 
 new Elysia({
     prefix: "/v1",
@@ -11,5 +12,7 @@ new Elysia({
     .listen(3000, ({ port }) => {
         port
     })
+    
     .use(list)
+    .use(util)
 
