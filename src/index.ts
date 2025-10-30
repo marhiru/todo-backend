@@ -8,7 +8,7 @@ new Elysia({
     .get("/version", () => {
         return "1.0.0"
     })
-    .listen(3002, ({ port }) => {
+    .listen(3000, ({ port }) => {
         port
     })
     .use(list)
