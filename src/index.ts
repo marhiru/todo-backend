@@ -1,6 +1,7 @@
 import { Elysia } from "elysia";
 import { list } from "./modules/list";
-import { util } from "./modules/util";
+import { user } from "./modules/user";
+import { authentication } from "./modules/authentication";
 
 new Elysia({
     prefix: "/v1",
@@ -14,5 +15,6 @@ new Elysia({
     })
     
     .use(list)
-    .use(util)
+    .use(user)
+    .use(authentication)
 
