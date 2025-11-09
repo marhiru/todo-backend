@@ -3,12 +3,14 @@ import { list } from "./modules/list";
 import { user } from "./modules/user";
 import { authentication } from "./modules/authentication";
 
+const version = require("../package.json").version
+
 new Elysia({
     prefix: "/v1",
     normalize: true
 })
     .get("/version", () => {
-        return "1.0.0"
+        return version
     })
     .listen(3000, ({ port }) => {
         port
